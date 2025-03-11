@@ -3,70 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualizador 3D en AR</title>
+    <title>Modelo 3D Animado</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-        }
-        #container {
-            width: 90%;
-            max-width: 600px;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin: 0;
         }
         model-viewer {
             width: 100%;
+            max-width: 600px;
             height: 500px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-        .ar-button {
-            background-color: #0078d4;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-        }
-        .ar-button:disabled {
-            background-color: #ccc;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <div id="container">
-        <h1>Visualizador 3D con Realidad Aumentada</h1>
-        <model-viewer 
-            src="./modelo2.glb" 
-            ar 
-            ar-modes="scene-viewer webxr quick-look"
-            auto-rotate 
-            camera-controls>
-            <button slot="ar-button" class="ar-button">
-                Ver en Realidad Aumentada Ahora
-            </button>
-        </model-viewer>
-    </div>
+    <model-viewer 
+        src="./modelo2.glb" 
+        ar 
+        auto-rotate 
+        camera-controls
+        animation-name="idle"
+        autoplay>
+    </model-viewer>
 </body>
 </html>
